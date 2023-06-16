@@ -1,0 +1,55 @@
+.picplaceholder {
+  background-color: #efefef;
+  border:1px solid #ccc;
+  height: 170px;
+  position:relative;
+}
+
+
+.imageButtons {
+  position: absolute;
+  bottom: 16px;
+  right:16px;
+}
+
+
+.tabs{
+  background-color: #ccc;
+ margin-bottom: 16px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.activetab,.tab { 
+  padding:10px;
+  border-radius: 10px;
+ 
+}
+
+.activetab{ background-color: #0a0324;
+color: white;
+} 
+
+.required::after{
+    content: "*";
+    color:red;
+    font-size: 20px;    
+}
+
+.thum{
+  margin-top: -33px
+}
+
+.page{
+    margin: 25px 0 0 112px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.image{
+  position: absolute;
+    inset: 0;
+    width: auto;
+    height: 170px;
+    margin: 0 auto;
+}

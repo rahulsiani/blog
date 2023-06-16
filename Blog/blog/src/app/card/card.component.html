@@ -1,0 +1,37 @@
+<div class="container b-card">
+  <div class="row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+      <ng-container *ngFor="let data of blog">
+        <div class="card" style="width: 20rem;" (click)="description(data)">
+          <img src={{data.image}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="title">{{data.title}}</h5>
+            <p class="teaser">{{data.meta_description.slice(0,100)}}....</p>
+            <div class="d-flex gap-2">
+
+
+              <div class="d-flex gap-2">
+                <img class="user-img inline-block" src={{data.author.image}}>
+                <p class="user-name">
+                  {{data.author.first_name}},{{data.author.department.slice(0,15)}}....</p>
+              </div>
+
+              <div class="date d-flex gap-2">
+                <img alt="calendar"  src="../assets/images/event_calendar_icon_176735 (2).png">
+
+                <div style="min-width: max-content;">{{getDate(data.createdAt)}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+.title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    font-feature-settings: "liga" off;
+    color: #14142b;
+}
+.teaser {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    font-feature-settings: "liga" off;
+    color: #14142b;
+    opacity: .5;
+    margin-top: 9px;
+}
+.user-img {
+   width: 14.5px;
+    height: 14.5px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.user-name {
+    flex: 1 1 auto;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    font-feature-settings: "liga" off;
+    color: #898995;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.date {
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    font-feature-settings: "liga" off;
+    color: #898995;
+    height: 20px;
+    width: 20px;
+}
+
+.b-card{
+    margin: 35px auto;
+    
+}

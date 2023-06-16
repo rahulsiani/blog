@@ -1,0 +1,22 @@
+<div class="card blog-card" style="width: 56rem;">
+  <img [src]="blogimg" class="card-img-top">
+
+  <div class="d-flex gap-2">
+    <div class="d-flex">
+      <img class="user-img" [src]="authorimg">
+      <p class="user-name" [innerHTML]="firstName"></p>
+      <p class="user-name" style="margin-left: 4px;" [innerHTML]="blogdepartment"></p>
+    </div>
+
+    <div class="date">
+      <img alt="calendar" src="../assets/images/event_calendar_icon_176735 (2).png">
+
+      <div style="min-width: max-content; margin-top: 12px;" [innerHTML]="getDate(createdate)"></div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h1 [innerHTML]="title"></h1>
+    <p class="card-text" [innerHTML]="blogdec"></p>
+  </div>
+</div>
