@@ -4,7 +4,8 @@
   "info": {
     "singularName": "form",
     "pluralName": "forms",
-    "displayName": "form"
+    "displayName": "form",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,14 +28,15 @@
       "type": "string"
     },
     "pagethumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "allowcomment": {
       "type": "boolean"
@@ -49,6 +51,9 @@
       "type": "text"
     },
     "seodec": {
+      "type": "text"
+    },
+    "blogImage": {
       "type": "text"
     }
   }
