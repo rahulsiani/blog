@@ -3,6 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PageAddService } from 'src/Service/page-add.service';
+import  axios  from 'axios';
+
+
 
 @Component({
   selector: 'app-add-page',
@@ -10,8 +13,8 @@ import { PageAddService } from 'src/Service/page-add.service';
   styleUrls: ['./add-page.component.css'],
 })
 export class AddPAgeComponent implements OnInit {
-  formValues: any = {} ;
-file:File;
+  formValues: any = {};
+  file: File;
   allow: any;
   pagetitle: string;
   Pagelink: string;
@@ -22,44 +25,63 @@ file:File;
   seokeyword: string;
   seodec: string;
   typeValue: string;
-  pagethumbnail : string;
+  pagethumbnail: string;
 
   constructor(
     private addpageService: PageAddService,
     private router: Router,
     private toaster: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.formValues.typeValue = 'First';
+    // this.formValues.typeValue = '';
   }
-  onFilechange(event: any) {
-    console.log(event.target.files[0])
+  async onFilechange(event: any) {
+  // let formData = new FormData()  
     const file = event.target.files[0];
-    this.formValues.pagethumbnail = file;
+    // formData.append('files',file)
+    // this.addpageService.imageUpload(formData).subscribe(res =>{
+    //   console.log(res)
+    // })
+    // try {
+    //   const response = await axios.post('http://localhost:1337/upload', formData, {
+    //     headers: {
+    //       'Content-Type': `multipart/form-data;`,
+    //     },
+    //   });
+    //   console.log('Image uploaded successfully:', response.data);
+    // } catch (error) {
+    //   console.error('Error uploading image:' );
+    // }
+  
+    // this.formValues.pagethumbnail = file;
+
+
     const fileReader = new FileReader();
-    fileReader.onload = ()=> {
-    
-      this.formValues.img = fileReader.result;
-     
+    fileReader.onload = () => {
+      this.formValues.blogImage = fileReader.result; this.formValues.img = fileReader.result;
+
     };
     fileReader.readAsDataURL(file);
   }
 
+
+  deleteImage(e) {
+    this.formValues.img = '';
+    this.formValues.blogImage = undefined;
+  }
+
   addPage() {
-    let form ={...this.formValues};
-delete form.img;
-    // m
+    let form = this.formValues 
+       delete form.pagethumbnail;
+       delete form.img;
+    // const formData = new FormData()
 
-// Object.keys(form).forEach(key => {
-// formData.append(key, form[key])
+    // Object.keys(form).forEach(key => {
+    //   formData.append(key, form[key])
+    // });
 
-// })
-// formData.append'test','123')
-
-
-    // this.formValues.pagetitle
-    this.addpageService.addPage({ data: form }).subscribe((apiresponse) => {
+    this.addpageService.addPage({data: form}).subscribe((apiresponse) => {
       console.log(apiresponse);
       if ((apiresponse.sucess = true)) {
         this.toaster.success(

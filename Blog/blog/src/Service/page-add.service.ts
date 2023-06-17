@@ -14,6 +14,7 @@ export class PageAddService {
   //   })
   // };
   constructor(public httpClient : HttpClient) { }
+  options = {} as any;
 
   public addPage(form) : Observable<any>{
     return this.httpClient.post(this.url + 'api/forms',form)
@@ -23,5 +24,8 @@ export class PageAddService {
   }
   public getBlogdes(id) : Observable<any>{
     return this.httpClient.get(`https://stageapi.academically.com/v1/blog/${id}`)
+  }
+  public imageUpload(form): Observable<any>{
+    return this.httpClient.post(this.url + 'api/upload',form)
   }
 }
